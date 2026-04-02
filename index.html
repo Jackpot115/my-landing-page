@@ -3,11 +3,319 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Product</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-mid: #122040;
+      --navy-light: #1c3260;
+      --white: #ffffff;
+      --off-white: #f0f4f8;
+      --accent: #4a90d9;
+      --accent-light: #7ab3e8;
+      --text-muted: #8ca0bc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--navy);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Background texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(74, 144, 217, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(28, 50, 96, 0.6) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 64px;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .photo-wrap {
+      position: relative;
+    }
+
+    .photo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: spin 12s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--navy-light);
+      display: block;
+      background: var(--navy-light);
+    }
+
+    .photo-placeholder {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy-light), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+      border: 4px solid var(--navy-light);
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+
+    .hero-text .role {
+      font-size: 1rem;
+      color: var(--accent-light);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    /* ── SUMMARY ── */
+    .summary-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 64px;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--off-white);
+      animation: fadeUp 0.8s 0.2s ease both;
+      backdrop-filter: blur(8px);
+    }
+
+    .summary-box p {
+      font-weight: 300;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* ── PROJECTS ── */
+    .projects {
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 28px;
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+      cursor: default;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(74, 144, 217, 0.4);
+      background: rgba(74, 144, 217, 0.06);
+    }
+
+    .project-card .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(74, 144, 217, 0.12);
+      border-radius: 4px;
+      padding: 3px 8px;
+      margin-bottom: 14px;
+    }
+
+    .project-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: var(--white);
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .project-card .card-footer {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      gap: 12px;
+    }
+
+    .card-link {
+      font-size: 0.8rem;
+      color: var(--accent-light);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .card-link:hover {
+      color: var(--white);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 24px;
+      }
+      .photo-wrap, .photo-placeholder {
+        margin: 0 auto;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to My Product</h1>
-  <p>Coming soon...</p>
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="photo-wrap">
+        <!-- Replace the div below with an <img> tag once you have a photo -->
+        <!-- <img src="your-photo.jpg" alt="Your Name" class="photo"> -->
+        <div class="photo-placeholder">🧑</div>
+      </div>
+      <div class="hero-text">
+        <h1>Your Name Here</h1>
+        <p class="role">Your Title / Role</p>
+      </div>
+    </section>
+
+    <!-- SUMMARY -->
+    <section>
+      <div class="section-label">About Me</div>
+      <div class="summary-box">
+        <p>
+          Write a short summary about yourself here. Where are you based, what do you do,
+          what are you passionate about? Keep it conversational and genuine — this is the
+          first thing visitors will read, so make it count!
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects">
+      <div class="section-label">Projects</div>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <span class="tag">Web</span>
+          <h3>Project One</h3>
+          <p>A short description of what this project does and why you built it.</p>
+          <div class="card-footer">
+            <a href="#" class="card-link">View Project →</a>
+            <a href="#" class="card-link">GitHub →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <span class="tag">App</span>
+          <h3>Project Two</h3>
+          <p>A short description of what this project does and why you built it.</p>
+          <div class="card-footer">
+            <a href="#" class="card-link">View Project →</a>
+            <a href="#" class="card-link">GitHub →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <span class="tag">Tool</span>
+          <h3>Project Three</h3>
+          <p>A short description of what this project does and why you built it.</p>
+          <div class="card-footer">
+            <a href="#" class="card-link">View Project →</a>
+            <a href="#" class="card-link">GitHub →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
 </body>
 </html>
