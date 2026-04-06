@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Matt Cleary</title>
+  <title>Projects — Matt Cleary</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
@@ -13,9 +13,9 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Matt Cleary</a>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="posts.html">Posts</a></li>
       </ul>
     </div>
@@ -23,33 +23,13 @@
 
   <div class="container">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="photo-wrap">
-        <img src="DSOTM_Pic.jpg" alt="Matt Cleary" class="photo">
-      </div>
-      <div class="hero-text">
-        <h1>Matt Cleary</h1>
-        <p class="role">Cybersecurity Student at The Pennsylvania State University '27</p>
-      </div>
-    </section>
+    <div class="page-header">
+      <h1>Projects</h1>
+      <p>Things I've built, broken, and learned from.</p>
+    </div>
 
-    <!-- SUMMARY -->
-    <section>
-      <div class="section-label">About Me</div>
-      <div class="summary-box">
-        <p>
-          I'm a Cybersecurity student at Penn State with a passion for getting my hands dirty
-          outside the classroom. I run a personal homelab where I self-host applications and manage
-          my own servers. It's where I experiment, break things, and learn how systems really work
-          under the hood.
-        </p>
-      </div>
-    </section>
-
-    <!-- PROJECTS PREVIEW -->
     <section class="projects">
-      <div class="section-label">Recent Projects</div>
+      <div class="section-label">All Projects</div>
       <div class="projects-grid">
 
         <div class="project-card">
@@ -57,7 +37,8 @@
           <h3>Project One</h3>
           <p>A short description of what this project does and why you built it.</p>
           <div class="card-footer">
-            <a href="projects.html" class="card-link">View All Projects →</a>
+            <a href="#" class="card-link">View Project →</a>
+            <a href="#" class="card-link">GitHub →</a>
           </div>
         </div>
 
@@ -66,7 +47,18 @@
           <h3>Project Two</h3>
           <p>A short description of what this project does and why you built it.</p>
           <div class="card-footer">
-            <a href="projects.html" class="card-link">View All Projects →</a>
+            <a href="#" class="card-link">View Project →</a>
+            <a href="#" class="card-link">GitHub →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <span class="tag">Networking</span>
+          <h3>Project Three</h3>
+          <p>A short description of what this project does and why you built it.</p>
+          <div class="card-footer">
+            <a href="#" class="card-link">View Project →</a>
+            <a href="#" class="card-link">GitHub →</a>
           </div>
         </div>
 
