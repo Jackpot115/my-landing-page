@@ -25,6 +25,10 @@ body {
   flex-direction: column;
 }
 
+main.page-content {
+  flex: 1;
+}
+
 body::before {
   content: '';
   position: fixed;
@@ -93,7 +97,7 @@ nav {
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 60px 24px;
+  padding: 50px 24px;
   position: relative;
   z-index: 1;
 }
@@ -208,7 +212,7 @@ nav {
   border: 1px solid rgba(255,255,255,0.1);
   border-left: 3px solid var(--accent);
   border-radius: 12px;
-  padding: 28px 32px;
+  padding: 20px 24px;
   margin-bottom: 64px;
   font-size: 1.05rem;
   line-height: 1.75;
@@ -355,7 +359,7 @@ nav {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
-  padding: 28px;
+  padding: 16px;
 }
 
 .about-card h3 {
