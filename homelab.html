@@ -25,6 +25,10 @@
   </div>
 
 
+  <!-- summer post: adding additional drives to optiplex for raid backups, application backups WITH LOGGING (truenas, immich, jellyfin), additional optiplex's to set up, media stack?  -->
+
+  <!-- Make a post about spring break. I added Imich as a backup for my photos and learned how to map storage drives from the optiplex to an application running in a vm-->
+
 
   <hr class="divider" />
 
@@ -34,12 +38,41 @@
       <img src="IMG_8065.jpeg" alt="OptiPlex additional hardware" />
       </div>
     <div class="summary">
+      <p>Coming home for winter break allowed me to work on my homelab more. Not only did I have more free time to tinkers and mess around with it, but I also couldn't 
+        virtually access my homelab from school. However, this would soon change.</p>
+      <p>I decided to set up a solution to the problem I had and that was not being able to access my homelab's applications from outside my network. So, I taught myself
+        how to set up a virtual private network (VPN) tunnel. Since I already had a pfSense firewall/router combo, I set up a VPN tunnel so that I could access my homelab from
+        anywhere around the world. Just as long as I was connected to the internet.</p>
+    </div>
 
 
+    <div class="img-wrap">
+      <img src="IMG_7983.jpeg" alt="Proxmox server setup" />
+      </div>
+    <div class="summary">
+        <p>After setting up the VPN, I wanted to start a Proxmox server for myself. This is because for the holidays, I received parts for me to build myself a PC and no longer had
+          a use for the laptop I was currently using.</p>
+        <p>I loaded the Proxmox ISO onto a USB drive and installed it on my old gaming laptop. From there, I configured the server and could access it remotely via its GUI. From there,
+          I have a few virtual machines running on the server. I converted one of the servers into a Minecraft server so that I could have that up and running again. I have uses
+          for the other servers but will slowly be working on them.
+        </p>
+      </div>
 
+    <div class="img-wrap">
+      <img src="IMG_7992.jpeg" alt="OptiPlex additional hardware" />
+      </div>
+    <div class="summary">
+      <p>Additionally, I went to a hardware surplus store and scored myself a Dell OptiPlex for a good price. I only had to supply my own SSD and it was up and running!</p>
+      <p>I swapped out the old TrueNAS server and replaced it with the OptiPlex. Getting it set up was straightforward since I went through all the steps previously. The only difference 
+        was that I had an additional hard drive to set up for storage.</p>
+        <p>This additional hard drive allowed me to start using my applications. For example I taught myself how to set up a ZFS pool so I can add media to the drive while also
+          connecting the drive to my Jellyfin server. This allowed me to start streaming the media I owned to my devices.
+        </p>
+      <p>Adding this extra machine to my network required me to upgrade my network switch to accommodate the additional device. I invested in a layer 3 switch to improve
+        network performance. This also allows me in the future to set up VLANs and isolate my network traffic for security purposes. However, I will learn that in the upcoming future.
+      </p>
     </div>
   </div>
-
 
 
   <hr class="divider" />
